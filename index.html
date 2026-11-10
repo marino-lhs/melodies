@@ -47,6 +47,27 @@ button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visi
 .lv[aria-pressed="true"]{background:var(--surface);border-color:var(--accent);box-shadow:inset 0 -3px 0 var(--accent)}
 @media (max-width:640px){.lv span{display:none}.lv{align-items:center;padding:8px 0}}
 .desc{margin:0;color:var(--muted);font-size:.92rem;max-width:90ch}
+.melset{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.mshead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px}
+.mshead h2{font-family:var(--display);font-size:1.25rem;margin:0}
+.presets{display:flex;align-items:center;gap:8px}
+.presets small,.msgrid small{color:var(--muted);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.pre{width:34px;height:34px;border:1px solid var(--line);background:var(--surface);border-radius:8px;font-family:var(--display);font-weight:700;font-size:1.05rem}
+.pre:hover{border-color:var(--muted)}
+.pre[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.msgrid{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-end}
+.segc{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:10px;padding:3px;gap:3px;background:var(--surface)}
+.segc button{border:0;background:transparent;border-radius:7px;padding:6px 12px;font-weight:700;color:var(--muted)}
+.segc button:hover{color:var(--ink)}
+.segc button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 13px;font-weight:600;color:var(--muted)}
+.chip:hover{border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.chip[aria-pressed="true"]::before{content:"✓ ";color:var(--accent)}
+.chip:disabled{cursor:default;opacity:.75}
+.msgrid select{min-height:44px}
+.presets .seg{gap:4px}
+@media (max-width:520px){.pre{width:30px;height:32px}.presets{gap:6px}}
 .desc b{color:var(--ink);font-weight:700}
 .desc .mdesc{display:block}
 .apbar{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--accent-soft)}
@@ -133,6 +154,31 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:8px;
 .how p{margin:0;max-width:65ch}
 kbd{font:600 .8rem var(--body);border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;color:var(--ink);background:var(--surface)}
 footer{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
+.sharebox{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:12px}
+.sharebox>small{color:var(--muted);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.linktext{font:500 .85rem ui-monospace,Menlo,Consolas,monospace;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:6px 8px;overflow-wrap:anywhere;user-select:all;-webkit-user-select:all}
+.locknote{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;color:var(--muted);font-size:.92rem;margin:0}
+.linkbtn{background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;font-weight:500}
+.report{border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);padding:20px;width:min(720px,calc(100vw - 32px));max-height:calc(100vh - 32px)}
+.report::backdrop{background:rgba(10,14,22,.55)}
+.report-card{display:flex;flex-direction:column;gap:12px}
+.report h2{font-family:var(--display);font-size:1.4rem;margin:0}
+.report-sub{color:var(--muted);font-size:.92rem;margin:2px 0 0}
+.namefld{display:flex;flex-direction:column;gap:4px;font-size:.85rem;color:var(--muted);margin-bottom:14px}
+.namefld input{font:inherit;font-size:1rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px 10px;max-width:320px}
+.tablewrap{overflow-x:auto}
+.report table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.92rem}
+.report th,.report td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+.report th{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.report td.num,.report th.num{text-align:right}
+.report-more{color:var(--muted);font-size:.88rem;margin:0}
+.report-totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:0}
+.report-totals div{background:var(--accent-soft);border-radius:8px;padding:10px 12px}
+.report-totals dt{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.report-totals dd{margin:2px 0 0;font-family:var(--display);font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums}
+.report-note{margin:14px 0 0;font-weight:700}
+.report-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px;flex-wrap:wrap}
+.report-msg{margin:10px 0 0;color:var(--muted);font-size:.9rem}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -141,17 +187,46 @@ footer{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
 <div class="wrap">
   <header>
     <h1>Melodic Dictation</h1>
-    <div class="modes" role="group" aria-label="Mode">
+    <div class="modes" role="group" aria-label="Mode" id="modes">
       <button class="md" data-mode="practice" aria-pressed="true">Practice</button>
       <button class="md" data-mode="challenge" aria-pressed="false">Challenge</button>
       <button class="md" data-mode="ap" aria-pressed="false">AP</button>
     </div>
   </header>
 
-  <div class="picker">
-    <nav class="levels" aria-label="Level" id="levels"></nav>
+  <section class="melset" aria-label="Melody settings">
+    <div class="mshead">
+      <h2>Melody</h2>
+      <div class="presets"><small>Presets</small><div class="seg" id="presets"></div></div>
+    </div>
+    <div class="msgrid">
+      <div class="grp"><small>Meter</small><div class="segc" data-key="meter"><button data-v="4/4">4/4</button><button data-v="6/8">6/8</button></div></div>
+      <div class="grp"><small>Length</small><div class="segc" data-key="bars"><button data-v="2">2 bars</button><button data-v="4">4 bars</button></div></div>
+      <div class="grp"><small>Keys</small><div class="segc" data-key="quality"><button data-v="major">Major</button><button data-v="minor">Minor</button><button data-v="both">Both</button></div></div>
+      <div class="grp"><small>Key signatures</small>
+        <select id="maxAcc" aria-label="Key signatures">
+          <option value="0">C major / A minor only</option><option value="1">Up to 1 sharp or flat</option><option value="2">Up to 2</option><option value="3">Up to 3</option>
+          <option value="4" selected>Up to 4</option><option value="5">Up to 5</option><option value="7">All keys</option>
+        </select>
+      </div>
+      <div class="grp"><small>Largest leap</small>
+        <select id="leap" aria-label="Largest leap">
+          <option value="1">Steps only</option><option value="2">3rd</option><option value="3">4th</option>
+          <option value="4">5th</option><option value="5">6th</option><option value="7">Octave</option>
+        </select>
+      </div>
+      <div class="grp"><small>Rhythms</small><div class="seg" id="rhythms"></div></div>
+      <div class="grp"><small>Starts on</small><div class="segc" data-key="start"><button data-v="tonic">Tonic</button><button data-v="chord">Do, mi or sol</button></div></div>
+    </div>
     <p class="desc" id="desc"></p>
-  </div>
+    <div class="sharebox">
+      <small>Share with students</small>
+      <div class="seg"><button class="btn" id="copyLink">Copy link</button><button class="chip" id="lockOn" aria-pressed="false">Hide settings from students</button></div>
+      <p class="desc" id="shareNote"></p>
+      <div class="linktext" id="linkText" hidden></div>
+    </div>
+  </section>
+  <p class="locknote" id="lockNote" hidden><span id="lockSum"></span><button class="linkbtn" id="showSet">Show settings</button></p>
 
   <section class="sheet" aria-label="Dictation">
     <div class="transport">
@@ -199,6 +274,7 @@ footer{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
       <div class="score"><span class="big" id="sBig"></span><span class="sm" id="sPitch"></span><span class="sm" id="sRhy"></span></div>
       <div class="legend"><span><i style="background:var(--ok)"></i>Pitch and rhythm right</span><span><i style="background:var(--part)"></i>One of the two right</span><span><i style="background:var(--bad)"></i>Both wrong</span></div>
       <ul class="notes-list" id="sNotes"></ul>
+      <div class="actions"><button class="btn" id="shareBtn">Share score</button></div>
       <div class="answer" id="answer" hidden>
         <div class="transport"><h2>Answer</h2><span class="spacer"></span><button class="btn" id="playAns">Play answer</button></div>
         <div class="staffbox"><svg id="ansSvg" viewBox="0 0 880 196" role="img" aria-label="Answer staff"></svg></div>
@@ -214,12 +290,6 @@ footer{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
       </label>
       <label>Tempo <span id="bpmOut">♩ = 80</span>
         <input type="range" id="bpm" min="50" max="132" step="2" value="80">
-      </label>
-      <label>Keys
-        <select id="maxAcc">
-          <option value="1">Up to 1 sharp or flat</option><option value="2">Up to 2</option><option value="3">Up to 3</option>
-          <option value="4" selected>Up to 4</option><option value="5">Up to 5</option><option value="7">All keys</option>
-        </select>
       </label>
       <label>Instrument
         <select id="instr">
@@ -241,6 +311,17 @@ footer{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
 
   <footer id="stats">This session: no melodies checked yet.</footer>
 </div>
+
+<dialog class="report" id="report" aria-labelledby="reportTitle">
+  <label class="namefld">Your name<input id="stuName" type="text" maxlength="40" autocomplete="name"></label>
+  <div class="report-card" id="reportCard"></div>
+  <p class="report-note">Save the image or take a screenshot, then send it to your teacher.</p>
+  <div class="report-actions">
+    <button class="btn" id="closeReport">Close</button>
+    <button class="btn primary" id="saveImage">Save image</button>
+  </div>
+  <p class="report-msg" id="saveMsg" hidden></p>
+</dialog>
 
 <script>
 const G = {"gClef":{"d":"M524 363C557 363 595 360 624 354C639 351 642 350 645 367C662 464 684 589 684 657C684 870 540 896 455 896C377 896 340 873 340 854C340 844 353 840 386 829C431 816 482 778 482 694C482 615 432 547 344 547C248 547 190 624 190 713C190 806 246 948 464 948C560 948 747 904 747 660C747 577 721 441 706 351C703 334 704 336 724 327C870 269 966 147 966 -16C966 -200 831 -363 619 -363C582 -363 582 -363 577 -389L541 -598C539 -615 541 -616 550 -625C706 -770 824 -953 824 -1174C824 -1299 789 -1423 730 -1509C708 -1541 671 -1581 655 -1581C635 -1581 590 -1544 562 -1512C455 -1394 420 -1214 420 -1064C420 -981 431 -887 441 -828C444 -811 445 -808 428 -793C220 -622 0 -416 0 -125C0 125 171 363 524 363ZM115 -29C115 -114 130 -228 249 -363C336 -459 402 -513 469 -567C484 -579 487 -577 490 -562L520 -377C524 -350 524 -351 498 -343C372 -300 289 -186 289 -63C289 66 357 158 455 192C467 196 484 200 494 200C505 200 511 193 511 184C511 174 500 170 490 166C429 140 386 78 386 12C386 -71 442 -132 530 -157C553 -163 556 -161 559 -145L631 284C634 300 632 300 611 304C588 308 559 311 530 311C278 311 115 171 115 -29ZM677 -1358C724 -1358 763 -1319 763 -1240C763 -1080 626 -950 513 -851C503 -842 497 -844 494 -863C488 -900 485 -949 485 -995C485 -1220 589 -1358 677 -1358ZM635 -168C752 -158 848 -60 848 66C848 157 793 230 713 271C696 279 693 279 690 262L619 -148C616 -166 618 -170 635 -168Z","x_min":0,"x_max":671},"cClef":{"d":"M269 694C269 714 279 724 300 724L301 724C321 724 331 714 331 694L331 63C331 52 338 53 344 55C382 65 442 102 472 265C477 288 485 301 500 301C516 301 523 287 530 262C549 199 582 128 684 128C778 128 804 220 804 409C804 598 770 683 651 683C631 683 528 674 528 644C528 636 552 628 567 622C596 612 625 583 625 528C625 465 583 429 527 429C465 429 416 471 416 547C416 638 495 729 667 729C903 729 1007 563 1007 413C1007 215 897 76 706 76C664 76 636 84 618 89C603 94 589 96 576 88C556 75 524 29 524 0C524 -29 556 -75 576 -88C589 -96 603 -94 618 -89C636 -84 664 -76 706 -76C897 -76 1007 -215 1007 -413C1007 -563 903 -729 667 -729C495 -729 416 -638 416 -547C416 -471 465 -429 527 -429C583 -429 625 -465 625 -528C625 -583 596 -612 567 -622C552 -628 528 -636 528 -644C528 -674 631 -683 651 -683C770 -683 804 -598 804 -409C804 -220 778 -128 684 -128C582 -128 549 -199 530 -262C523 -287 516 -301 500 -301C485 -301 477 -288 472 -265C442 -102 382 -65 344 -55C338 -53 331 -52 331 -63L331 -694C331 -714 321 -724 301 -724L300 -724C279 -724 269 -714 269 -694ZM30 724L154 724C174 724 184 714 184 694L184 -694C184 -714 174 -724 154 -724L30 -724C10 -724 0 -714 0 -694L0 694C0 714 10 724 30 724Z","x_min":0,"x_max":699},"fClef":{"d":"M12 914C19 914 27 912 36 907C390 734 765 478 765 40C765 -210 612 -377 363 -377C112 -377 0 -194 0 -56C0 59 60 158 177 158C268 158 330 95 330 6C330 -86 262 -144 192 -144C153 -144 138 -134 120 -134C101 -134 96 -145 96 -160C96 -217 183 -323 330 -323C482 -323 549 -173 549 53C549 455 350 680 14 871C1 878 -7 886 -7 897C-7 906 -1 914 12 914ZM906 -101C950 -101 985 -135 985 -180C985 -225 950 -259 906 -259C861 -259 827 -225 827 -180C827 -135 861 -101 906 -101ZM907 258C952 258 985 225 985 180C985 135 952 102 907 102C863 102 829 135 829 180C829 225 863 258 907 258Z","x_min":-5,"x_max":684},"accidentalSharp":{"d":"M12 -37C17 -37 45 -50 49 -53C50 -53 52 -55 53 -55C63 -55 72 -40 72 -29L72 114C72 130 65 143 56 147C48 150 17 163 17 163C7 166 0 177 0 186L0 288C0 297 4 301 12 301C13 301 16 300 17 300C17 300 37 291 50 287C52 285 53 285 55 285C65 285 72 301 72 308L72 485C72 494 81 501 91 501C105 501 115 494 115 485L115 285C115 266 122 256 130 253L217 217C219 217 222 216 223 216C235 216 242 233 242 242L242 422C242 431 251 438 261 438C276 438 285 431 285 422L285 217C285 206 291 189 301 184C311 180 341 168 341 168C351 164 359 153 359 144L359 42C359 35 354 30 348 30C346 30 344 30 341 32L304 46C295 46 285 37 285 20L285 -114C285 -124 292 -151 304 -156L341 -170C351 -174 359 -186 359 -194L359 -297C359 -304 354 -308 348 -308C346 -308 344 -308 341 -307C341 -307 312 -295 305 -294C295 -294 285 -301 285 -312L285 -488C285 -497 276 -504 265 -504C251 -504 242 -497 242 -488L242 -301C240 -287 236 -268 223 -259C206 -249 157 -229 132 -223C120 -223 115 -240 115 -252L115 -425C115 -433 105 -441 95 -441C81 -441 72 -433 72 -425L72 -230C72 -210 63 -196 55 -192C46 -187 17 -176 17 -176C7 -173 0 -161 0 -153L0 -50C0 -42 4 -37 12 -37ZM111 43C111 -1 112 -52 115 -63C118 -88 184 -118 220 -118C230 -118 239 -115 242 -109C245 -102 248 -66 248 -27C248 12 245 52 242 65C233 94 166 122 132 122C124 122 117 120 115 115C112 109 111 78 111 43Z","x_min":0,"x_max":249},"accidentalFlat":{"d":"M17 245C22 251 26 252 30 252C35 252 39 249 39 249C82 225 117 186 153 161C281 72 325 -16 325 -82C325 -164 262 -216 196 -220C171 -220 137 -209 117 -196C108 -189 92 -176 85 -176C82 -176 81 -176 78 -177C68 -181 62 -192 62 -202C63 -233 72 -579 72 -608C72 -624 59 -632 45 -632C24 -632 1 -618 0 -592C0 -592 6 230 17 245ZM66 -73C76 -102 134 -144 167 -144C209 -144 226 -96 226 -60C226 17 160 95 98 134C92 137 88 138 84 138C71 138 68 124 68 117C68 117 63 30 63 -27C63 -50 65 -68 66 -73Z","x_min":0,"x_max":226},"accidentalNatural":{"d":"M0 268C0 276 4 281 12 281C13 281 20 279 22 278C42 269 122 235 164 235C179 235 189 239 189 251L189 465C189 475 196 482 206 482L225 482C233 482 242 475 242 465L242 -258C242 -265 236 -269 230 -269C229 -269 226 -269 225 -268L203 -261C200 -261 199 -259 197 -259C197 -259 105 -226 68 -226C59 -226 53 -228 53 -233L53 -474C53 -484 45 -491 36 -491L17 -491C7 -491 0 -484 0 -474ZM176 -114C184 -114 189 -112 189 -107L189 42C189 68 107 101 71 101C60 101 53 98 53 92L53 -56C53 -76 141 -114 176 -114Z","x_min":0,"x_max":168},"noteheadBlack":{"d":"M0 60C0 135 62 180 140 180C268 180 425 62 425 -60C425 -134 367 -180 285 -180C127 -180 0 -63 0 60Z","x_min":0,"x_max":295},"noteheadHalf":{"d":"M140 180C377 180 425 -13 425 -60C425 -134 366 -180 282 -180C68 -180 0 -14 0 60C0 137 60 180 140 180ZM42 63C42 -7 251 -121 318 -121C346 -121 361 -108 372 -91C376 -82 380 -73 380 -63C380 -1 177 125 108 125C78 125 60 109 50 92C46 84 42 73 42 63Z","x_min":0,"x_max":295},"flag8thUp":{"d":"M284 688C305 737 318 819 318 904C318 969 308 1037 284 1102C281 1110 279 1117 279 1123C279 1146 294 1159 302 1165C311 1171 336 1162 343 1138C343 1138 380 1001 380 888C380 708 305 539 215 395C141 281 81 157 58 19C53 -4 42 -13 14 -13C6 -13 0 -9 0 9L0 353C95 370 232 566 284 688Z","x_min":0,"x_max":264},"flag8thDown":{"d":"M16 20C43 20 55 12 58 -12C82 -148 189 -274 262 -387C353 -530 441 -701 441 -881C441 -994 412 -1096 400 -1142C396 -1158 387 -1164 377 -1164C356 -1164 331 -1136 346 -1094C366 -1034 376 -962 376 -897C376 -812 340 -691 318 -642C265 -521 193 -405 0 -340L0 -1C0 16 7 20 16 20Z","x_min":0,"x_max":306},"timeSig4":{"d":"M58 161L325 161L325 252C325 291 294 302 268 302C245 302 235 315 235 330C235 344 240 360 262 360L569 360C583 360 598 350 598 330C598 310 580 301 566 301C552 301 521 292 521 246L521 161L626 161C641 161 648 151 648 134C648 117 642 107 626 107L521 107L521 -202C521 -213 520 -226 504 -226C491 -226 484 -223 475 -213L338 -48C333 -40 325 -32 325 -14L325 107L131 107C246 9 477 -318 481 -334C481 -337 482 -338 482 -341C482 -353 472 -361 461 -361C448 -361 389 -359 363 -359C337 -359 272 -361 261 -361C248 -361 228 -357 228 -334C228 -156 86 45 43 105L35 117C35 118 33 120 33 121C30 127 29 132 29 137C29 151 40 161 58 161Z","x_min":20,"x_max":450},"timeSig6":{"d":"M29 -4L29 1C30 68 42 143 73 200C132 307 203 359 324 359C389 359 461 348 513 307C563 266 596 202 596 137C596 24 490 -72 379 -72C333 -72 285 -55 248 -22C245 -19 242 -19 239 -19C230 -19 226 -30 226 -53C230 -320 315 -327 346 -327C374 -327 393 -320 393 -305C393 -285 366 -268 357 -251C350 -238 347 -223 347 -209C347 -187 354 -166 369 -150C379 -131 420 -120 439 -120C500 -120 554 -167 554 -229C554 -235 554 -239 553 -245C539 -337 426 -361 348 -361C239 -360 137 -307 85 -209C53 -148 29 -72 29 -4ZM320 -3C366 -3 405 69 405 158C405 248 366 320 320 320C274 320 236 248 236 158C236 69 274 -3 320 -3Z","x_min":20,"x_max":414},"timeSig8":{"d":"M29 190C29 315 158 373 301 373C445 373 599 311 599 117C599 30 549 -17 481 -52C533 -85 567 -132 567 -204C567 -351 356 -373 317 -373C150 -373 36 -297 36 -176C36 -76 92 -23 161 16C86 52 29 99 29 190ZM111 183C111 125 161 72 225 48C330 94 436 124 436 219C436 276 392 325 295 325C199 325 111 276 111 183ZM314 -331C360 -331 482 -308 482 -207C482 -150 454 -112 406 -85C291 -125 168 -150 168 -240C168 -301 251 -331 314 -331Z","x_min":20,"x_max":416}};
@@ -268,15 +349,33 @@ const METERS = {
   '4/4': { num: 4, den: 4, mlen: 8, blen: 2, durs: [1, 2, 4], compound: false },
   '6/8': { num: 6, den: 8, mlen: 6, blen: 3, durs: [1, 2, 3], compound: true }
 };
-const LEVELS = {
-  1: { meter: '4/4', meas: 2, minor: false, leaps: false, eighths: false, tag: '4/4 · steps', desc: 'Major keys. 4/4, two bars. Steps only. Quarter and half notes.' },
-  2: { meter: '4/4', meas: 2, minor: false, leaps: true, eighths: true, tag: '4/4 · thirds', desc: 'Major keys. 4/4, two bars. Steps and thirds. Adds eighth notes.' },
-  3: { meter: '4/4', meas: 2, minor: true, leaps: true, eighths: true, tag: '4/4 · minor', desc: 'Melodic minor. 4/4, two bars. Steps and thirds. Eighth notes.' },
-  4: { meter: '6/8', meas: 2, minor: false, leaps: true, eighths: true, tag: '6/8', desc: 'Major keys. 6/8, two bars. Steps and thirds. Each beat is a dotted quarter, a quarter and eighth, or three eighths.' },
-  5: { meter: '6/8', meas: 2, minor: true, leaps: true, eighths: true, tag: '6/8 · minor', desc: 'Melodic minor. 6/8, two bars. Steps and thirds. Each beat is a dotted quarter, a quarter and eighth, or three eighths.' },
-  6: { meter: '4/4', meas: 4, minor: false, leaps: true, eighths: true, tag: '4 bars', desc: 'Major keys. 4/4, four bars. Steps and thirds. Eighth notes.' },
-  7: { meter: '4/4', meas: 4, minor: true, leaps: true, eighths: true, tag: '4 bars · minor', desc: 'Melodic minor. 4/4, four bars. Steps and thirds. Eighth notes.' }
+// Your seven original levels, kept as presets over the melody settings
+const PRESETS = {
+  1: { meter: '4/4', bars: 2, quality: 'major', leap: 1, h: true, e: false, qe: true, eee: true, start: 'tonic' },
+  2: { meter: '4/4', bars: 2, quality: 'major', leap: 2, h: true, e: true, qe: true, eee: true, start: 'tonic' },
+  3: { meter: '4/4', bars: 2, quality: 'minor', leap: 2, h: true, e: true, qe: true, eee: true, start: 'tonic' },
+  4: { meter: '6/8', bars: 2, quality: 'major', leap: 2, h: true, e: true, qe: true, eee: true, start: 'tonic' },
+  5: { meter: '6/8', bars: 2, quality: 'minor', leap: 2, h: true, e: true, qe: true, eee: true, start: 'tonic' },
+  6: { meter: '4/4', bars: 4, quality: 'major', leap: 2, h: true, e: true, qe: true, eee: true, start: 'tonic' },
+  7: { meter: '4/4', bars: 4, quality: 'minor', leap: 2, h: true, e: true, qe: true, eee: true, start: 'tonic' }
 };
+const LEAP_NAME = { 2: 'a 3rd', 3: 'a 4th', 4: 'a 5th', 5: 'a 6th', 7: 'an octave' };
+const hasEighths = c => c.meter === '6/8' ? (c.qe || c.eee) : c.e;
+function presetOf(c) {
+  const keys = ['meter', 'bars', 'quality', 'leap', 'start', ...(c.meter === '6/8' ? ['qe', 'eee'] : ['h', 'e'])];
+  const hit = Object.entries(PRESETS).find(([, p]) => keys.every(k => p[k] === c[k]));
+  return hit ? +hit[0] : null;
+}
+function cfgDesc(c) {
+  const q = { major: 'Major keys', minor: 'Melodic minor', both: 'Major and melodic minor keys' }[c.quality];
+  let lp = c.leap === 1 ? 'Steps only.' : `Steps and leaps up to ${LEAP_NAME[c.leap]}. No more than two leaps in a row.`;
+  if (c.leap >= 3) lp += ' A leap of a 4th or more turns back by step.';
+  const list = a => a.length < 2 ? a.join('') : a.slice(0, -1).join(', ') + ' and ' + a[a.length - 1];
+  const rh = c.meter === '6/8'
+    ? 'Beats: ' + list(['dotted quarter', c.qe && 'quarter + eighth', c.eee && 'three eighths'].filter(Boolean)) + '.'
+    : list(['Quarter', c.h && 'half', c.e && 'eighth'].filter(Boolean)) + ' notes.';
+  return `${q}. ${c.meter}, ${c.bars === 2 ? 'two' : 'four'} bars. ${lp} ${rh} Starts on ${c.start === 'tonic' ? 'the tonic' : 'do, mi or sol'}. Ends on the tonic.`;
+}
 const MODES = {
   practice: 'Notes sound as you place them. Play back your answer and check as often as you like.',
   challenge: 'Notes are silent while you write. No playback of your answer. One check.',
@@ -300,23 +399,24 @@ function keyInfo(f, minor) {
 
 /* ---------- state ---------- */
 const S = {
-  mode: 'practice', level: 1, clef: 'treble', bpm: 80, bpm8: 100, maxAcc: 4, clickOn: false, hintOn: true, instr: 'auto',
+  mode: 'practice', cfg: { ...PRESETS[1] }, clef: 'treble', bpm: 80, bpm8: 100, maxAcc: 4, clickOn: false, hintOn: true, instr: 'auto', lock: false, fromLink: false,
   mel: null, ans: [], sel: null, selExplicit: false, curDur: 2, pendAcc: null,
   checked: null, locked: false, plays: 0, playingId: null, playingAns: null, nid: 1, lastF: null,
   ap: { phase: 'ready', round: 0, endAt: 0, total: 0 },
   stats: { n: 0, perfect: 0, ok: 0, tot: 0 }, countedThis: false
 };
-const SAVED = ['mode', 'level', 'clef', 'bpm', 'bpm8', 'maxAcc', 'clickOn', 'hintOn', 'instr'];
+const SAVED = ['mode', 'cfg', 'clef', 'bpm', 'bpm8', 'maxAcc', 'clickOn', 'hintOn', 'instr', 'lock'];
 try {
   const p = JSON.parse(localStorage.getItem('dictation.settings') || '{}');
   for (const k of SAVED) if (p[k] !== undefined) S[k] = p[k];
-  if (!LEVELS[S.level]) S.level = 1;
+  if (p.level && PRESETS[p.level] && !p.cfg) S.cfg = { ...PRESETS[p.level] };   // older saved level
+  S.cfg = { ...PRESETS[1], ...S.cfg };
   if (!MODES[S.mode]) S.mode = 'practice';
 } catch (e) {}
 function saveSettings() {
   try { const o = {}; for (const k of SAVED) o[k] = S[k]; localStorage.setItem('dictation.settings', JSON.stringify(o)); } catch (e) {}
 }
-const LV = () => LEVELS[S.level];
+const LV = () => S.mel.L;
 const MT = () => S.mel.M;
 const total = () => S.mel.M.mlen * S.mel.nMeas;
 
@@ -328,28 +428,29 @@ function genRhythm(L) {
   for (let t = 0; t < 4000; t++) {
     const d = [];
     if (M.compound) {
-      const beats = L.meas * 2;
-      for (let b = 0; b < beats - 1; b++) {
-        const c = pickW([{ v: [3], w: 2.2 }, { v: [2, 1], w: 2.6 }, { v: [1, 1, 1], w: 2.4 }]);
-        d.push(...c.v);
-      }
+      const cells = [{ v: [3], w: 2.2 }];
+      if (L.qe) cells.push({ v: [2, 1], w: 2.6 });
+      if (L.eee) cells.push({ v: [1, 1, 1], w: 2.4 });
+      for (let b = 0; b < L.meas * 2 - 1; b++) d.push(...pickW(cells).v);
       d.push(3);                                   // end on a dotted quarter
-      if (!d.includes(1) || d.length < 2 * L.meas + 2) continue;
+      if (cells.length > 1 && (!d.includes(1) || d.length < 2 * L.meas + 2)) continue;
+      if (d.length > (L.meas > 2 ? 16 : 12)) continue;
     } else {
       for (let m = 0; m < L.meas; m++) {
         let rem = m === L.meas - 1 ? 4 : 8;        // last measure ends with a half note
         while (rem > 0) {
-          const o = [{ v: [2], w: L.eighths ? 4.5 : 6 }];
-          if (rem >= 4) o.push({ v: [4], w: L.eighths ? 1.6 : 3 });
-          if (L.eighths) o.push({ v: [1, 1], w: 3.2 });
+          const o = [{ v: [2], w: L.e ? 4.5 : 6 }];
+          if (L.h && rem >= 4) o.push({ v: [4], w: L.e ? 1.6 : 3 });
+          if (L.e) o.push({ v: [1, 1], w: 3.2 });
           const c = pickW(o); d.push(...c.v); rem -= c.v.reduce((a, b) => a + b, 0);
         }
         if (m === L.meas - 1) d.push(4);
       }
       if (d.length < 2.5 * L.meas || d.length > (L.meas > 2 ? 16 : 12)) continue;
-      if (L.eighths && !d.includes(1)) continue;
+      if (L.e && !d.includes(1)) continue;
     }
-    if (!L.leaps && d.length % 2 === 0) continue;   // steps only: an even count can't return to the tonic
+    // steps only: the note count decides whether the line can get back to the tonic
+    if (L.leap === 1 && mod(d.length - 1, 2) !== mod(L.s, 2) && d.length - 1 < 7 - L.s) continue;
     return d;
   }
   return null;
@@ -363,35 +464,50 @@ function minorRaised(deg) {   // melodic minor: 6 and 7 raised when the line con
   });
 }
 
+const LEAP_SEMIS = { 2: [3, 4], 3: [5], 4: [7], 5: [8, 9], 7: [12] };   // diatonic leap → allowed semitones (no aug/dim leaps)
+const LEAP_W = { 2: 1.1, 3: 0.6, 4: 0.45, 5: 0.25, 7: 0.2 };
 function genPitches(n, L) {
-  for (let t = 0; t < 20000; t++) {
-    const d = [0]; let run = 0, leaps = 0, ok = true, lastLeap = 0;
+  const scale = L.minor ? [0, 2, 3, 5, 7, 8, 10] : [0, 2, 4, 5, 7, 9, 11];
+  const sizes = [2, 3, 4, 5, 7].filter(z => z <= L.leap);
+  for (let t = 0; t < 4000; t++) {
+    const d = [L.s]; let run = 0, leaps = 0, ok = true, lastLeap = 0, lo = L.s, hi = L.s;
     for (let i = 1; i < n; i++) {
       const p = d[i - 1], o = [];
       const add = (iv, w) => {
-        const v = p + iv, lo = Math.min(...d, v), hi = Math.max(...d, v);
-        if (v < -3 || v > 7 || hi - lo > 7) return;
+        const v = p + iv;
+        if (v < -3 || v > 7 || Math.max(hi, v) - Math.min(lo, v) > 7) return;
         o.push({ iv, w });
       };
-      const back = lastLeap ? -Math.sign(lastLeap) : 0;   // after a leap, prefer a step back
-      add(1, back === 1 ? 4 : back === -1 ? 1.2 : 3);
-      add(-1, back === -1 ? 4 : back === 1 ? 1.2 : 3);
-      if (L.leaps && run < 2) { add(2, 1.1); add(-2, 1.1); }
+      if (Math.abs(lastLeap) >= 3) add(-Math.sign(lastLeap), 1);     // a 4th or more turns back by step
+      else {
+        const back = lastLeap ? -Math.sign(lastLeap) : 0;           // after a 3rd, prefer a step back
+        add(1, back === 1 ? 4 : back === -1 ? 1.2 : 3);
+        add(-1, back === -1 ? 4 : back === 1 ? 1.2 : 3);
+        if (run < 2) for (const z of sizes) { add(z, LEAP_W[z]); add(-z, LEAP_W[z]); }
+      }
       if (!o.length) { ok = false; break; }
-      const c = pickW(o); d.push(p + c.iv);
-      if (Math.abs(c.iv) === 2) { run++; leaps++; lastLeap = c.iv; } else { run = 0; lastLeap = 0; }
+      const c = pickW(o); d.push(p + c.iv); lo = Math.min(lo, p + c.iv); hi = Math.max(hi, p + c.iv);
+      if (Math.abs(c.iv) >= 2) { run++; leaps++; lastLeap = c.iv; } else { run = 0; lastLeap = 0; }
     }
     if (!ok) continue;
     if (d[n - 1] !== 0 && d[n - 1] !== 7) continue;
-    if (L.leaps && (leaps < Math.max(1, Math.floor(n / 8)) || leaps / (n - 1) > 0.4)) continue;
+    if (L.leap > 1 && (leaps < Math.max(1, Math.floor(n / 8)) || leaps / (n - 1) > 0.4)) continue;
+    const r = L.minor ? minorRaised(d) : d.map(() => false);
     if (L.minor) {
       if (!d.some(x => [5, 6].includes(mod(x, 7)))) continue;
-      const r = minorRaised(d); let bad = false;
+      let bad = false;
       for (let i = 0; i < n - 1; i++) {
         if ([5, 6].includes(mod(d[i], 7)) && [5, 6].includes(mod(d[i + 1], 7)) && r[i] !== r[i + 1]) bad = true;
       }
       if (bad) continue;
     }
+    const semi = i => 12 * Math.floor(d[i] / 7) + scale[mod(d[i], 7)] + (r[i] ? 1 : 0);
+    let badIv = false;
+    for (let i = 1; i < n && !badIv; i++) {
+      const z = Math.abs(d[i] - d[i - 1]), st = Math.abs(semi(i) - semi(i - 1));
+      if (z === 1 ? st < 1 || st > 2 : !LEAP_SEMIS[z].includes(st)) badIv = true;
+    }
+    if (badIv) continue;
     return d;
   }
   return null;
@@ -400,7 +516,10 @@ function genPitches(n, L) {
 function newMelody() {
   apReset();
   stopAudio();
-  const L = LV(), M = METERS[L.meter];
+  const c = S.cfg, minor = c.quality === 'minor' || (c.quality === 'both' && Math.random() < 0.5);
+  const L = { meter: c.meter, meas: c.bars, minor, leap: c.leap, h: c.h, e: c.e, qe: c.qe, eee: c.eee,
+              s: c.start === 'tonic' ? 0 : [0, 2, 4, -3][Math.floor(Math.random() * 4)] };
+  const M = METERS[L.meter];
   let pool = [];
   for (let f = -7; f <= 7; f++) {
     if (Math.abs(f) > S.maxAcc) continue;
@@ -410,16 +529,29 @@ function newMelody() {
   if (pool.length > 1) pool = pool.filter(f => f !== S.lastF);
   const f = pool[Math.floor(Math.random() * pool.length)];
   S.lastF = f;
-  let durs, deg;
-  do { durs = genRhythm(L); deg = durs && genPitches(durs.length, L); } while (!deg);
+  // Some combinations can't end on the tonic (for example steps only with dotted quarters only).
+  // Try as set, then loosen one thing at a time and say what changed.
+  let durs, deg, note = '';
+  const tries = [
+    [L, ''],
+    [{ ...L, s: 0 }, ''],
+    [{ ...L, s: -3 }, ''],
+    [{ ...L, leap: Math.max(L.leap, 2) }, 'These settings could not end on the tonic, so this melody also uses leaps of a 3rd.'],
+    [{ ...L, leap: Math.max(L.leap, 2), h: true, e: true, qe: true, eee: true }, 'These settings could not end on the tonic, so this melody also uses leaps of a 3rd and every rhythm.']
+  ];
+  for (const [cand, msg] of tries) {
+    if (cand.s !== L.s && S.cfg.start === 'tonic') continue;
+    for (let k = 0; k < 25 && !deg; k++) { durs = genRhythm(cand); deg = durs && genPitches(durs.length, cand); }
+    if (deg) { Object.assign(L, cand); note = msg; break; }
+  }
   const raised = L.minor ? minorRaised(deg) : deg.map(() => false);
-  S.mel = { key: keyInfo(f, L.minor), M, nMeas: L.meas, durs, deg, raised };
+  S.mel = { key: keyInfo(f, L.minor), M, L, nMeas: L.meas, durs, deg, raised };
   placeMelody();
   S.ans = []; S.sel = null; S.checked = null; S.locked = false; S.plays = 0; S.countedThis = false; S.pendAcc = null;
   S.curDur = M.compound ? 3 : 2;
   $('#result').hidden = true; $('#answer').hidden = true; $('#reveal').disabled = true;
   buildDurButtons();
-  setStatus('');
+  setStatus(note);
   renderAll();
 }
 
@@ -599,7 +731,7 @@ function renderEntry() {
   s += drawFrame(fr, true);
   if (S.checked) u.forEach((n, i) => n.cls = S.checked.user[i]);
   if (!u.length && S.hintOn && !ghost) {
-    const hn = { D: S.mel.tonicD, dur: 2 }, x = fr.xOf(0), y = fr.yOf(hn.D, 0);
+    const hn = { D: S.mel.notes[0].D, dur: 2 }, x = fr.xOf(0), y = fr.yOf(hn.D, 0);
     s += `<g class="hint">${headParts(hn, x, y, fr, false)}<text x="${x}" y="${Math.min(y, Y0) - 16}" text-anchor="middle">START</text></g>`;
   }
   s += drawNotes(u, fr, { sel: S.sel, playing: S.playingId });
@@ -627,18 +759,19 @@ function syncTempo() {             // the slider shows ♩ in simple meter, ♪ 
 function renderTools() {
   const L = LV(), M = MT(), ap = S.mode === 'ap', ph = S.ap.phase;
   document.querySelectorAll('.md').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === S.mode)));
-  document.querySelectorAll('.lv').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.level === S.level)));
-  $('#desc').innerHTML = `<b>Level ${S.level}.</b> ${L.desc} <span class="mdesc"><b>${S.mode === 'ap' ? 'AP' : S.mode[0].toUpperCase() + S.mode.slice(1)} mode.</b> ${MODES[S.mode]}</span>`;
+  renderMelset();
+  renderShare();
+  $('#desc').innerHTML = `${cfgDesc(S.cfg)} <span class="mdesc"><b>${S.mode === 'ap' ? 'AP' : S.mode[0].toUpperCase() + S.mode.slice(1)} mode.</b> ${MODES[S.mode]}</span>`;
   $('#keyname').textContent = S.mel.key.name;
   syncTempo();
-  $('#meta').innerHTML = `${tempoText()} · ${L.meter} · ${S.mel.nMeas} bars · starts on the tonic`;
+  $('#meta').innerHTML = `${tempoText()} · ${L.meter} · ${S.mel.nMeas} bars · starts on ${S.cfg.start === 'tonic' ? 'the tonic' : 'do, mi or sol'}`;
   $('#plays').textContent = ap ? '' : S.plays === 1 ? '1 play' : `${S.plays} plays`;
   $('#playMel span').textContent = ap ? (ph === 'ready' ? 'Start' : ph === 'done' ? 'Finished' : 'Running') : (nowPlaying === 'mel' ? 'Stop' : 'Play melody');
   $('#playMel').disabled = ap && ph !== 'ready';
   $('#hearKey').disabled = ap && (ph === 'playing' || ph === 'wait');
   document.querySelectorAll('#durs .tb').forEach(b => {
     const v = +b.dataset.dur;
-    b.hidden = v === 1 && !L.eighths;
+    b.hidden = v === 1 && !hasEighths(L);
     const selNote = S.selExplicit && S.ans.find(a => a.id === S.sel);
     b.setAttribute('aria-pressed', String(selNote ? selNote.dur === v : S.curDur === v));
   });
@@ -660,6 +793,7 @@ function renderAll() { renderEntry(); renderAnswer(); renderTools(); renderStats
 
 function renderStats() {
   const t = S.stats;
+  $('#shareBtn').disabled = !HIST.length;
   $('#stats').textContent = t.n
     ? `This session: ${t.n} ${t.n === 1 ? 'melody' : 'melodies'} checked · ${t.perfect} perfect · ${Math.round(100 * t.ok / t.tot)}% of notes right on the first check.`
     : 'This session: no melodies checked yet.';
@@ -690,8 +824,18 @@ function buildDurButtons() {
 }
 $('#accs').innerHTML = [['sharp', 'accidentalSharp', 'Sharp (#)'], ['flat', 'accidentalFlat', 'Flat (-)'], ['natural', 'accidentalNatural', 'Natural (N)']]
   .map(([a, g, t]) => `<button class="tb" data-acc="${a}" title="${t}" aria-label="${t}">${iconAcc(g)}</button>`).join('');
-$('#levels').innerHTML = Object.entries(LEVELS).map(([n, L]) =>
-  `<button class="lv" data-level="${n}" aria-pressed="false" title="${L.desc}"><b>${n}</b><span>${L.tag}</span></button>`).join('');
+$('#presets').innerHTML = Object.entries(PRESETS).map(([n, p]) =>
+  `<button class="pre" data-preset="${n}" aria-pressed="false" title="Level ${n}: ${cfgDesc(p)}">${n}</button>`).join('');
+function renderMelset() {
+  const c = S.cfg, pre = presetOf(c);
+  document.querySelectorAll('.melset [data-key]').forEach(seg => seg.querySelectorAll('button').forEach(b =>
+    b.setAttribute('aria-pressed', String(String(c[seg.dataset.key]) === b.dataset.v))));
+  document.querySelectorAll('.pre').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.preset === pre)));
+  $('#leap').value = String(c.leap);
+  const opts = c.meter === '6/8' ? [['qe', 'Quarter + eighth'], ['eee', 'Three eighths']] : [['h', 'Half notes'], ['e', 'Eighth notes']];
+  $('#rhythms').innerHTML = `<button class="chip" aria-pressed="true" disabled title="Always included">${c.meter === '6/8' ? 'Dotted quarters' : 'Quarter notes'}</button>` +
+    opts.map(([k, t]) => `<button class="chip" data-r="${k}" aria-pressed="${!!c[k]}">${t}</button>`).join('');
+}
 
 /* ---------- editing ---------- */
 const clampD = D => { const t = CLEF[S.clef].top; return Math.max(t - 14, Math.min(t + 6, D)); };
@@ -753,7 +897,7 @@ function setAcc(acc) {
   renderAll();
 }
 function setDur(v) {
-  if (!MT().durs.includes(v) || (v === 1 && !LV().eighths) || blocked()) return;
+  if (!MT().durs.includes(v) || (v === 1 && !hasEighths(LV())) || blocked()) return;
   const n = S.selExplicit && S.ans.find(a => a.id === S.sel), M = MT();
   if (n) {
     if (S.checked) clearCheck();
@@ -1001,6 +1145,222 @@ function renderAP() {
   bar.querySelectorAll('.aprounds i').forEach((d, i) => d.className = i < ap.round - (ap.phase === 'playing' ? 1 : 0) ? 'done' : i === ap.round - 1 && ap.phase === 'playing' ? 'now' : '');
 }
 
+/* ---------- share settings by link ---------- */
+// The link carries melody settings, key signatures, tempo, mode and the hint. Clef and instrument stay the student's choice.
+function encode() {
+  const c = S.cfg;
+  const p = ['m' + (c.meter === '6/8' ? '68' : '44'), 'b' + c.bars, 'q' + c.quality.slice(0, 2), 'l' + c.leap,
+    'r' + (c.h ? 'h' : '') + (c.e ? 'e' : '') + (c.qe ? 'q' : '') + (c.eee ? 't' : ''), 's' + c.start[0],
+    'k' + S.maxAcc, 't' + S.bpm, 'u' + S.bpm8, 'o' + S.mode[0]];
+  if (!S.hintOn) p.push('h0');
+  if (S.lock) p.push('L');
+  return 'md-' + p.join('-');
+}
+function decode(h) {
+  const t = (h || '').replace(/^#/, '').split('-');
+  if (t[0] !== 'md') return null;
+  const o = { cfg: { ...PRESETS[1] }, maxAcc: 4, bpm: 80, bpm8: 100, mode: 'practice', hintOn: true, lock: false };
+  for (const x of t.slice(1)) {
+    const a = x[0], v = x.slice(1);
+    if (a === 'm') o.cfg.meter = v === '68' ? '6/8' : '4/4';
+    else if (a === 'b') o.cfg.bars = v === '4' ? 4 : 2;
+    else if (a === 'q') o.cfg.quality = { ma: 'major', mi: 'minor', bo: 'both' }[v] || 'major';
+    else if (a === 'l') o.cfg.leap = [1, 2, 3, 4, 5, 7].includes(+v) ? +v : 2;
+    else if (a === 'r') { o.cfg.h = v.includes('h'); o.cfg.e = v.includes('e'); o.cfg.qe = v.includes('q'); o.cfg.eee = v.includes('t'); }
+    else if (a === 's') o.cfg.start = v === 'c' ? 'chord' : 'tonic';
+    else if (a === 'k') o.maxAcc = [0, 1, 2, 3, 4, 5, 7].includes(+v) ? +v : 4;
+    else if (a === 't') o.bpm = Math.max(50, Math.min(132, +v || 80));
+    else if (a === 'u') o.bpm8 = Math.max(72, Math.min(200, +v || 100));
+    else if (a === 'o') o.mode = { p: 'practice', c: 'challenge', a: 'ap' }[v] || 'practice';
+    else if (x === 'h0') o.hintOn = false;
+    else if (x === 'L') o.lock = true;
+  }
+  return o;
+}
+function applyLink(o) { Object.assign(S, { cfg: o.cfg, maxAcc: o.maxAcc, bpm: o.bpm, bpm8: o.bpm8, mode: o.mode, hintOn: o.hintOn, lock: o.lock }); }
+const framed = (() => { try { return window.top !== window.self; } catch (e) { return true; } })();
+function writeHash() {
+  const h = '#' + encode();
+  if (location.hash === h) return;
+  try { location.replace(h); } catch (e) {}
+}
+window.addEventListener('hashchange', () => {
+  const o = decode(location.hash);
+  if (!o || '#' + encode() === location.hash) return;
+  applyLink(o); S.fromLink = true; saveSettings(); syncControls(); applyLock(); newMelody();
+});
+const MODE_NAME = { practice: 'Practice', challenge: 'Challenge', ap: 'AP' };
+function cfgShort(c) {
+  const rh = c.meter === '6/8' ? ['dotted quarters', c.qe && 'quarter + eighth', c.eee && 'three eighths'] : ['quarters', c.h && 'halves', c.e && 'eighths'];
+  return [c.meter, `${c.bars} bars`, { major: 'Major', minor: 'Minor', both: 'Major + minor' }[c.quality],
+    c.leap === 1 ? 'Steps only' : `Leaps to ${LEAP_NAME[c.leap].replace(/^an? /, '')}`,
+    rh.filter(Boolean).join(', '), c.start === 'tonic' ? 'Starts on tonic' : 'Starts on do/mi/sol'].join(' · ');
+}
+function applyLock() {
+  const locked = S.lock && S.fromLink;
+  $('.melset').hidden = locked; $('#modes').hidden = locked; $('#lockNote').hidden = !locked;
+  $('#lockSum').textContent = `Settings from your teacher: ${MODE_NAME[S.mode]} mode · ${cfgShort(S.cfg)}`;
+}
+function renderShare() {
+  $('#lockOn').setAttribute('aria-pressed', String(S.lock));
+  if (framed) {
+    $('#shareNote').textContent = 'This page is open inside Claude. Use Share, then Copy link, at the top of the page. The link already carries these settings and the mode.';
+    $('#copyLink').hidden = true; $('#linkText').hidden = true;
+  } else {
+    $('#shareNote').textContent = 'Students who open this link get these settings and this mode. Clef and instrument stay their choice.';
+    $('#linkText').hidden = false; $('#linkText').textContent = location.href.split('#')[0] + '#' + encode();
+  }
+}
+$('#copyLink').onclick = () => {
+  const url = location.href.split('#')[0] + '#' + encode();
+  const done = () => { $('#shareNote').textContent = 'Link copied. Students who open it get these settings and this mode.'; };
+  const fail = () => { const r = document.createRange(); r.selectNodeContents($('#linkText')); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); $('#shareNote').textContent = 'Copying is blocked here. The link is selected below. Copy it with your keyboard.'; };
+  try { navigator.clipboard.writeText(url).then(done, fail); } catch (e) { fail(); }
+};
+$('#lockOn').onclick = () => { S.lock = !S.lock; saveSettings(); writeHash(); renderShare(); };
+$('#showSet').onclick = () => { S.fromLink = false; applyLock(); };
+
+/* ---------- score report ---------- */
+let HIST = [];
+try { HIST = JSON.parse(sessionStorage.getItem('melodic.history') || '[]'); } catch (e) {}
+function saveHist() { try { sessionStorage.setItem('melodic.history', JSON.stringify(HIST)); } catch (e) {} }
+if (HIST.length) S.stats = { n: HIST.length, perfect: HIST.filter(h => h.ok === h.tot && h.extra === 0).length, ok: HIST.reduce((a, h) => a + h.ok, 0), tot: HIST.reduce((a, h) => a + h.tot, 0) };
+const ROWS = 12;
+const pctOf = (a, b) => b ? Math.round(100 * a / b) + '%' : '—';
+// What a missed note says about the student's needs
+function missTags(per, mel) {
+  const tags = [];
+  per.forEach((p, i) => {
+    if (!p.pitch) {
+      if (mel.key.minor && [5, 6].includes(mod(p.o.D - mel.tonicD, 7))) tags.push('6th and 7th degrees in minor');
+      else if (i === 0) tags.push('starting pitch');
+      else {
+        const z = Math.abs(p.o.D - per[i - 1].o.D);
+        tags.push(z === 1 ? 'steps' : `leaps of ${LEAP_NAME[z] || 'a 3rd'}`);
+      }
+    }
+    if (!p.rhythm) tags.push({ 1: 'eighth notes', 2: 'quarter notes', 3: 'dotted quarters', 4: 'half notes' }[p.o.dur]);
+  });
+  return tags;
+}
+function reportData() {
+  const sum = f => HIST.reduce((a, h) => a + f(h), 0);
+  const miss = {};
+  HIST.forEach(h => h.missed.forEach(m => miss[m] = (miss[m] || 0) + 1));
+  const start = Math.max(0, HIST.length - ROWS);
+  let name = ''; try { name = (localStorage.getItem('melodic.name') || '').trim(); } catch (e) {}
+  name = ($('#stuName').value || name).trim();
+  return {
+    name, when: new Date().toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }),
+    rows: HIST.slice(start).map((h, j) => ({ i: start + j + 1, ...h })), hidden: start, count: HIST.length,
+    modes: [...new Set(HIST.map(h => MODE_NAME[h.mode]))].join(', '),
+    sets: [...new Set(HIST.map(h => h.set))],
+    overall: `${sum(h => h.ok)}/${sum(h => h.tot)}`, percent: pctOf(sum(h => h.ok), sum(h => h.tot)),
+    pitch: pctOf(sum(h => h.pitch), sum(h => h.tot)), rhythm: pctOf(sum(h => h.rhythm), sum(h => h.tot)),
+    perfect: HIST.filter(h => h.ok === h.tot && h.extra === 0).length,
+    missed: Object.entries(miss).sort((a, b) => b[1] - a[1]).slice(0, 4)
+  };
+}
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+function openReport() {
+  const d = reportData();
+  $('#stuName').value = d.name;
+  const tiles = [['Overall', d.overall], ['Correct', d.percent], ['Pitch', d.pitch], ['Rhythm', d.rhythm]];
+  $('#reportCard').innerHTML = `
+    <div>
+      <h2 id="reportTitle">Melodic Dictation score</h2>
+      <p class="report-sub">${d.when} · ${d.count} ${d.count > 1 ? 'melodies' : 'melody'} · ${d.perfect} perfect · ${esc(d.modes)} mode</p>
+    </div>
+    <p class="report-more">Settings: ${d.sets.map(esc).join('<br>Settings: ')}</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>#</th><th>Mode</th><th>Key</th><th>Meter</th><th class="num">Plays</th><th class="num">Pitch</th><th class="num">Rhythm</th><th class="num">Score</th></tr></thead>
+      <tbody>${d.rows.map(r => `<tr><td>${r.i}</td><td>${MODE_NAME[r.mode]}</td><td>${esc(r.key)}</td><td>${r.meter} · ${r.bars} bars</td><td class="num">${r.plays}</td><td class="num">${r.pitch}/${r.tot}</td><td class="num">${r.rhythm}/${r.tot}</td><td class="num">${r.ok}/${r.tot} · ${pctOf(r.ok, r.tot)}</td></tr>`).join('')}</tbody>
+    </table></div>
+    ${d.hidden ? `<p class="report-more">Showing the last ${ROWS} of ${d.count} melodies. Totals include all of them.</p>` : ''}
+    <dl class="report-totals">${tiles.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+    ${d.missed.length ? `<p class="report-more">Missed most often: ${d.missed.map(([c, k]) => `${esc(c)} (${k})`).join(', ')}.</p>` : ''}`;
+  $('#saveMsg').hidden = true;
+  $('#report').showModal();
+}
+$('#stuName').addEventListener('input', () => { try { localStorage.setItem('melodic.name', $('#stuName').value); } catch (e) {} });
+
+// Draws the report on a canvas in fixed light colors, so the image looks the same in any theme.
+function reportCanvas(d) {
+  const Wc = 800, pad = 32, rowH = 32, scale = 2;
+  const wrap = (g, text, maxW) => { const out = []; let line = ''; for (const w of text.split(' ')) { const t = line ? line + ' ' + w : w; if (g.measureText(t).width > maxW && line) { out.push(line); line = w; } else line = t; } if (line) out.push(line); return out; };
+  const probe = document.createElement('canvas').getContext('2d');
+  probe.font = '15px "Alegreya Sans", system-ui, sans-serif';
+  const setLines = d.sets.flatMap(s => wrap(probe, 'Settings: ' + s, Wc - 2 * pad));
+  const missLine = d.missed.length ? 'Missed most often: ' + d.missed.map(([c, k]) => `${c} (${k})`).join(', ') + '.' : '';
+  const missLines = missLine ? wrap(probe, missLine, Wc - 2 * pad) : [];
+  const H = 136 + (d.name ? 30 : 0) + setLines.length * 22 + 30 + rowH * (d.rows.length + 1) + (d.hidden ? 28 : 0) + 124 + missLines.length * 22 + (missLines.length ? 8 : 0) - 24;
+  const c = document.createElement('canvas');
+  c.width = Wc * scale; c.height = H * scale;
+  const g = c.getContext('2d'); g.scale(scale, scale);
+  const ink = '#152030', muted = '#5A6576', line = '#D5DBE3', soft = '#E3E9FF', accent = '#2B4FD8';
+  const disp = s => `700 ${s}px Alegreya, Georgia, serif`, body = s => `${s}px "Alegreya Sans", system-ui, sans-serif`;
+  g.fillStyle = '#FFFFFF'; g.fillRect(0, 0, Wc, H);
+  g.fillStyle = accent; g.fillRect(0, 0, Wc, 6);
+  let y = 52;
+  g.fillStyle = ink; g.font = disp(28); g.fillText('Melodic Dictation score', pad, y);
+  if (d.name) { y += 32; g.font = disp(22); g.fillText(d.name, pad, y); }
+  y += 28; g.fillStyle = muted; g.font = body(16);
+  g.fillText(`${d.when} · ${d.count} ${d.count > 1 ? 'melodies' : 'melody'} · ${d.perfect} perfect · ${d.modes} mode`, pad, y);
+  g.font = body(15); setLines.forEach(t => { y += 22; g.fillText(t, pad, y); });
+  y += 36;
+  const cols = [[pad, '#', 'l'], [pad + 34, 'MODE', 'l'], [pad + 124, 'KEY', 'l'], [pad + 250, 'METER', 'l'], [pad + 420, 'PLAYS', 'r'], [pad + 500, 'PITCH', 'r'], [pad + 590, 'RHYTHM', 'r'], [Wc - pad, 'SCORE', 'r']];
+  g.font = body(12); g.fillStyle = muted;
+  cols.forEach(([x, h, a]) => { g.textAlign = a === 'r' ? 'right' : 'left'; g.fillText(h, x, y); });
+  const rule = yy => { g.fillStyle = line; g.fillRect(pad, yy, Wc - 2 * pad, 1); };
+  rule(y + 10); y += 10;
+  g.font = body(16);
+  d.rows.forEach(r => {
+    y += rowH; g.fillStyle = ink;
+    const vals = [r.i, MODE_NAME[r.mode], r.key, `${r.meter} · ${r.bars} bars`, r.plays, `${r.pitch}/${r.tot}`, `${r.rhythm}/${r.tot}`, `${r.ok}/${r.tot} · ${pctOf(r.ok, r.tot)}`];
+    cols.forEach(([x, , a], k) => { g.textAlign = a === 'r' ? 'right' : 'left'; g.fillText(String(vals[k]), x, y - 10); });
+    rule(y);
+  });
+  g.textAlign = 'left';
+  if (d.hidden) { y += 26; g.fillStyle = muted; g.font = body(14); g.fillText(`Showing the last ${ROWS} of ${d.count} melodies. Totals include all of them.`, pad, y); }
+  y += 22;
+  const tiles = [['OVERALL', d.overall], ['CORRECT', d.percent], ['PITCH', d.pitch], ['RHYTHM', d.rhythm]];
+  const bw = (Wc - 2 * pad - 10 * (tiles.length - 1)) / tiles.length;
+  tiles.forEach(([k, v], j) => {
+    const x = pad + j * (bw + 10);
+    g.fillStyle = soft; g.beginPath();
+    if (g.roundRect) g.roundRect(x, y, bw, 78, 8); else g.rect(x, y, bw, 78);
+    g.fill();
+    g.fillStyle = muted; g.font = body(11); g.fillText(k, x + 12, y + 24);
+    g.fillStyle = ink; g.font = disp(String(v).length > 7 ? 20 : 26); g.fillText(String(v), x + 12, y + 60);
+  });
+  y += 78;
+  if (missLines.length) { y += 8; g.fillStyle = muted; g.font = body(15); missLines.forEach(t => { y += 22; g.fillText(t, pad, y); }); }
+  return c;
+}
+async function saveImage() {
+  const d = reportData();
+  try { await document.fonts.ready; } catch (e) {}
+  const blob = await new Promise(r => reportCanvas(d).toBlob(r, 'image/png'));
+  const who = d.name ? d.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '-' : '';
+  const name = `melodic-dictation-${who}${new Date().toISOString().slice(0, 10)}.png`;
+  const file = new File([blob], name, { type: 'image/png' });
+  const touch = window.matchMedia('(pointer: coarse)').matches;
+  try {
+    if (touch && navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], title: 'Melodic Dictation score' }); return; }
+  } catch (e) { if (e && e.name === 'AbortError') return; }
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  $('#saveMsg').textContent = `Saved ${name}. If nothing downloaded, take a screenshot instead.`;
+  $('#saveMsg').hidden = false;
+}
+$('#shareBtn').onclick = openReport;
+$('#closeReport').onclick = () => $('#report').close();
+$('#saveImage').onclick = saveImage;
+$('#report').addEventListener('click', e => { if (e.target === $('#report')) $('#report').close(); });
+
 /* ---------- checking ---------- */
 function beatLabel(on) {
   const M = MT(), m = Math.floor(on / M.mlen) + 1, r = on % M.mlen, b = Math.floor(r / M.blen) + 1, off = r % M.blen;
@@ -1027,7 +1387,12 @@ function check(auto = false) {
   if (S.mode !== 'practice') { S.locked = true; S.sel = null; ghost = null; }
   const N = orig.length, ok = per.filter(p => p.pitch && p.rhythm).length;
   const pc = per.filter(p => p.pitch).length, rc = per.filter(p => p.rhythm).length;
-  if (!S.countedThis) { S.countedThis = true; S.stats.n++; S.stats.tot += N; S.stats.ok += ok; if (ok === N && u.length === N) S.stats.perfect++; }
+  if (!S.countedThis) {
+    S.countedThis = true; S.stats.n++; S.stats.tot += N; S.stats.ok += ok; if (ok === N && u.length === N) S.stats.perfect++;
+    HIST.push({ mode: S.mode, key: S.mel.key.name, meter: S.mel.L.meter, bars: S.mel.nMeas, plays: S.mode === 'ap' ? S.ap.round : S.plays,
+                pitch: pc, rhythm: rc, ok, tot: N, extra: Math.max(0, u.length - N), missed: missTags(per, S.mel), set: cfgShort(S.cfg) });
+    saveHist();
+  }
   $('#sBig').textContent = ok === N && u.length === N ? `All ${N} notes right` : `${ok} of ${N} notes right`;
   $('#sPitch').textContent = `Pitch ${pc}/${N}`;
   $('#sRhy').textContent = `Rhythm ${rc}/${N}`;
@@ -1056,8 +1421,17 @@ $('#reveal').onclick = () => { $('#answer').hidden = false; renderAnswer(); $('#
 $('#newMel').onclick = newMelody;
 
 /* ---------- controls ---------- */
-$('#levels').onclick = e => { const b = e.target.closest('.lv'); if (!b) return; S.level = +b.dataset.level; saveSettings(); newMelody(); };
-document.querySelectorAll('.md').forEach(b => b.onclick = () => { if (S.mode === b.dataset.mode) return; S.mode = b.dataset.mode; saveSettings(); newMelody(); });
+const cfgChanged = () => { saveSettings(); writeHash(); newMelody(); };
+$('#presets').onclick = e => { const b = e.target.closest('.pre'); if (!b) return; S.cfg = { ...PRESETS[b.dataset.preset] }; cfgChanged(); };
+document.querySelectorAll('.melset [data-key]').forEach(seg => seg.onclick = e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const k = seg.dataset.key, v = k === 'bars' ? +b.dataset.v : b.dataset.v;
+  if (S.cfg[k] === v) return;
+  S.cfg[k] = v; cfgChanged();
+});
+$('#rhythms').onclick = e => { const b = e.target.closest('[data-r]'); if (!b) return; S.cfg[b.dataset.r] = !S.cfg[b.dataset.r]; cfgChanged(); };
+$('#leap').onchange = () => { S.cfg.leap = +$('#leap').value; cfgChanged(); };
+document.querySelectorAll('.md').forEach(b => b.onclick = () => { if (S.mode === b.dataset.mode) return; S.mode = b.dataset.mode; saveSettings(); writeHash(); newMelody(); });
 $('#durs').onclick = e => { const b = e.target.closest('[data-dur]'); if (b) setDur(+b.dataset.dur); };
 $('#accs').onclick = e => { const b = e.target.closest('[data-acc]'); if (b) setAcc(b.dataset.acc); };
 $('#up').onclick = () => moveSel(1);
@@ -1066,14 +1440,15 @@ $('#del').onclick = delSel;
 $('#clear').onclick = () => { if (blocked()) return; S.ans = []; S.sel = null; S.checked = null; setStatus(''); renderAll(); };
 
 const instrSel = $('#instr'), clefSel = $('#clef'), bpm = $('#bpm'), maxAcc = $('#maxAcc'), clickOn = $('#clickOn'), hintOn = $('#hintOn');
-instrSel.value = S.instr; clefSel.value = S.clef; maxAcc.value = String(S.maxAcc); clickOn.checked = S.clickOn; hintOn.checked = S.hintOn;
+function syncControls() { instrSel.value = S.instr; clefSel.value = S.clef; maxAcc.value = String(S.maxAcc); clickOn.checked = S.clickOn; hintOn.checked = S.hintOn; }
 const apBusy = () => S.mode === 'ap' && (S.ap.phase === 'playing' || S.ap.phase === 'wait');
 instrSel.onchange = () => { S.instr = instrSel.value; saveSettings(); if (!apBusy()) stopAudio(); ensureSound(); };
 clefSel.onchange = () => { S.clef = clefSel.value; saveSettings(); placeMelody(); renderAll(); if (S.instr === 'auto' && AC) ensureSound(); };
 bpm.oninput = () => { if (MT().compound) S.bpm8 = +bpm.value; else S.bpm = +bpm.value; saveSettings(); renderTools(); };
-maxAcc.onchange = () => { S.maxAcc = +maxAcc.value; saveSettings(); newMelody(); };
+bpm.onchange = () => { writeHash(); renderShare(); };
+maxAcc.onchange = () => { S.maxAcc = +maxAcc.value; saveSettings(); writeHash(); newMelody(); };
 clickOn.onchange = () => { S.clickOn = clickOn.checked; saveSettings(); };
-hintOn.onchange = () => { S.hintOn = hintOn.checked; saveSettings(); renderEntry(); };
+hintOn.onchange = () => { S.hintOn = hintOn.checked; saveSettings(); writeHash(); renderShare(); renderEntry(); };
 
 document.addEventListener('keydown', e => {
   if (e.target.closest('input,select,textarea') || e.metaKey || e.ctrlKey || e.altKey) return;
@@ -1095,6 +1470,10 @@ document.addEventListener('keydown', e => {
   if (handled) e.preventDefault();
 });
 
+{ const o = decode(location.hash); if (o) { applyLink(o); S.fromLink = true; saveSettings(); } }   // opened from a teacher's link
+syncControls();
+applyLock();
+writeHash();
 newMelody();
 </script>
 
